@@ -11,7 +11,10 @@ const hbs = require("hbs");
 
 const app = express();
 
+/* For heroku */
 
+
+const port = process.env.PORT || 3000;
 /* Setup path for express config */
 const pathofHTMLHome = path.join(__dirname, "/public");
 const viewPath = path.join(__dirname,"./template");
@@ -85,8 +88,6 @@ app.get("/weather",(req,res)=>{
 
     LocalHost:3000
 */
-app.listen(3000, ()=> {
-    console.log("3000 fired up!");
+app.listen(port, ()=> {
+    console.log(port + " fired up!");
 })
-
-console.log("Git hehe");
